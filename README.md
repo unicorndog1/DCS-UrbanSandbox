@@ -5,12 +5,12 @@ This is yet another helicopter sandbox with a whole lot of inspiration coming fr
 
 Missions include 
 
--- CSAR - with lots of variation.  You can just do a landing and transport or do some actual searching within a defined radius. 
--- VIP rescue - A VIP is being transported, kill the escorts, spare the VIP and then rescue him 
--- Car chase - Someone is speeding around the town in a souped up car, track them down and destroy them
--- Vehicle Inspection - There are a bunch of suspicious abandoned vehicles, check them out and then do a 
+- CSAR - with lots of variation.  You can just do a landing and transport or do some actual searching within a defined radius. 
+- VIP rescue - A VIP is being transported, kill the escorts, spare the VIP and then rescue him 
+- Car chase - Someone is speeding around the town in a souped up car, track them down and destroy them
+- Vehicle Inspection - There are a bunch of suspicious abandoned vehicles, check them out and then do a 
 related task like transporting the bomb squad or hoising to the nearest airport
--- And more, see the GitHub page 
+- And more, see the GitHub page 
 
 The missions are designed around the Huey, but if you run as a multiplayer, you can use the dynamic spawn with whatever chopper you wish.  Since all missions are randomly generated, you can play anywhere on the map or on the map of your choice with slight modifications, see the Github page
 
