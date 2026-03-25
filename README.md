@@ -10,6 +10,9 @@ This mission uses Civilian Objects but will substitue units if it's not present 
 
 
 
+Everything below is lightly edited AI generated summary.  Better docs to come
+
+
 ## Table of Contents
 - [Starting Missions](#starting-missions)
 - [Mission Types](#mission-types)
