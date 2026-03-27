@@ -25,57 +25,11 @@ Everything below is AI generated with light editing, better documentation to com
 - [Starting Missions](#starting-missions)
 - [Mission Types](#mission-types)
 - [Adding New Towns/Cities](#adding-new-townscities)
-- [Automated E2E Harness](#automated-e2e-harness)
+
 
 ---
 
-## Automated E2E Harness
 
-You can run an end-to-end automated test pass that launches DCS, loads the mission, runs the in-game dry-run suites, and parses `dcs.log` for pass/fail markers.
-
-Command:
-
-```powershell
-./run_dcs_e2e_harness.ps1 -KillDcsOnFinish
-```
-
-Warm reuse of an already-running dedicated instance:
-
-```powershell
-./run_dcs_e2e_harness.ps1
-./run_dcs_e2e_harness.ps1 -ReuseRunningDcs
-```
-
-Startup and unpause verification only:
-
-```powershell
-./run_dcs_e2e_harness.ps1 -StartupOnly -KillDcsOnFinish
-```
-
-Optional parameters:
-
-- `-DcsExePath` (explicit path to `DCS.exe`)
-- `-MissionPath` (defaults to `leb.miz`)
-- `-SavedGamesRoot` (defaults to `~/Saved Games/DCS`)
-- `-HarnessTimeoutSec`
-- `-StartupOnly` (verify mission load plus `ssRunning` only; skips dry-run autorun markers)
-- `-ReuseRunningDcs` (reuse a compatible running dedicated server process and cycle to the alternate seeded mission slot instead of cold-starting DCS)
-
-Notes:
-
-- The mission must run with debug bootstrap enabled for dry-run suites.
-- Dedicated server profile config templates live under `e2e/server_profile/Config`.
-- Mission auto-load and auto-resume are controlled through `serverSettings.lua.template`, which the harness copies into the `DCS_CSAR_E2E` Saved Games profile.
-- Warm reuse requires one initial cold-start run so the harness can seed the two-slot mission list and updated hook scripts into the dedicated profile.
-- The harness now also verifies the dedicated server reaches `simulation started, state=ssRunning` before treating startup as healthy.
-- Startup autorun is controlled in `bootstrap.lua`:
-   - `AUTO_DRYRUN_ON_START`
-   - `AUTO_DRYRUN_DELAY_SECONDS`
-   - `AUTO_DRYRUN_MAX_DURATION_SECONDS`
-
-The script marks failure if log lines contain `status=failed` or `status=timeout` for dry-run cases.
-
----
 
 ## Starting Missions
 
