@@ -14,8 +14,10 @@ related task like transporting the bomb squad or hoising to the nearest airport
 
 The missions are designed around the Huey, but if you run as a multiplayer, you can use the dynamic spawn with whatever chopper you wish.  Since all missions are randomly generated, you can play anywhere on the map or on the map of your choice with slight modifications, see the Github page
 
+
+
 ## Prequisities 
-This mission uses [Civilian Objects] https://forum.dcs.world/topic/270558-civilian-objects-and-vehicles/ but will substitue units if it's not present (like the "yellow ambulance").  I highly recommend downloading it as it makes certain missions like the car chase more fun.
+This mission uses (Civilian Objects and Vehicles)[https://forum.dcs.world/topic/270558-civilian-objects-and-vehicles/] but will substitue units if it's not present (like the "yellow ambulance").  I highly recommend downloading it as it makes certain missions like the car chase more fun.
 
 Everything below is AI generated with light editing, better documentation to come 
 
@@ -37,6 +39,13 @@ Command:
 ./run_dcs_e2e_harness.ps1 -KillDcsOnFinish
 ```
 
+Warm reuse of an already-running dedicated instance:
+
+```powershell
+./run_dcs_e2e_harness.ps1
+./run_dcs_e2e_harness.ps1 -ReuseRunningDcs
+```
+
 Startup and unpause verification only:
 
 ```powershell
@@ -50,12 +59,14 @@ Optional parameters:
 - `-SavedGamesRoot` (defaults to `~/Saved Games/DCS`)
 - `-HarnessTimeoutSec`
 - `-StartupOnly` (verify mission load plus `ssRunning` only; skips dry-run autorun markers)
+- `-ReuseRunningDcs` (reuse a compatible running dedicated server process and cycle to the alternate seeded mission slot instead of cold-starting DCS)
 
 Notes:
 
 - The mission must run with debug bootstrap enabled for dry-run suites.
 - Dedicated server profile config templates live under `e2e/server_profile/Config`.
 - Mission auto-load and auto-resume are controlled through `serverSettings.lua.template`, which the harness copies into the `DCS_CSAR_E2E` Saved Games profile.
+- Warm reuse requires one initial cold-start run so the harness can seed the two-slot mission list and updated hook scripts into the dedicated profile.
 - The harness now also verifies the dedicated server reaches `simulation started, state=ssRunning` before treating startup as healthy.
 - Startup autorun is controlled in `bootstrap.lua`:
    - `AUTO_DRYRUN_ON_START`
