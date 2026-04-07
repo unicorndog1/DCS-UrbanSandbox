@@ -62,8 +62,16 @@ Use the **F10 Radio Menu** to select individual missions on demand:
 4. Mission spawns immediately - check F10 map for location
 
 **Available Missions:**
-- 🔴 **CSAR** (Combat Search And Rescue) - 4 difficulty levels, hostiles present
-- 🟢 **SAR** (Search And Rescue) - 4 difficulty levels, no hostiles
+- 🔴 **CSAR** (Combat Search And Rescue) - 4 difficulty levels:
+  - Easy: Infantry only
+  - Medium: Vehicles and infantry
+  - Hard: Heavy resistance with MANPADS
+  - Very Hard: Very heavy resistance with MANPADS
+- 🟢 **SAR** (Search And Rescue, no hostiles) - 4 difficulty levels:
+  - Easy: Exact location + orange smoke
+  - Medium: Nearby fires (decoy)
+  - Hard: Nearby accident scene
+  - Very Hard: No hints
 - 👔 **VIP Mission** - Destroy convoy, extract VIP
 - 🏎️ **Chase Mission** - Track and eliminate speeding vehicle (Easy/Hard)
 - 🚑 **Ambulance Under Attack** - Defend ambulance (Easy/Medium/Hard)
@@ -94,16 +102,27 @@ Experience extended gameplay with **3 consecutive random missions**:
 **Objective:** Locate a crash site, rescue survivor(s), and deliver them to the nearest hospital.
 
 #### Difficulty Levels
-| Level | Label | Search Area | Hostiles (CSAR) |
-|-------|-------|-------------|-----------------|
-| 1 | Easy | Exact location | Light |
-| 2 | Medium | 500m radius | Moderate |
-| 3 | Hard | 1500m radius | Heavy |
-| 4 | Very Hard | 2500m radius | Very Heavy |
 
-**The Difference:**
-- **CSAR** = Enemy units present at crash site (use caution!)
-- **SAR** = No hostile units (focus on search)
+**SAR (Non-Hostile) - Search & Navigation Challenge:**
+| Difficulty | F10 Map Marker | Search Radius | Visual Aids |
+|------------|----------------|---------------|-------------|
+| Easy | ✅ Ambulance shown | 1000m | White ambulance + orange smoke |
+| Medium | ❌ No marker | 1000m | White ambulance + multiple fires (decoys) |
+| Hard | ❌ No marker | 1000m | White ambulance + accident wreckage |
+| Very Hard | ❌ No marker | 1250m | No visual aids - pure search |
+
+**CSAR (Hostile) - Combat + Search Challenge:**
+| Difficulty | F10 Map Marker | Search Radius | Enemy Composition |
+|------------|----------------|---------------|-------------------|
+| Easy | ✅ Ambulance shown | 1000m | 5 infantry units only |
+| Medium | ✅ Ambulance shown | 1000m | 8+ units: Infantry + Light Vehicles |
+| Hard | ✅ Ambulance shown | 1000m | 15+ units: Infantry + Vehicles + MANPADS (max 2) |
+| Very Hard | ✅ Ambulance shown | 1000m | 20+ units: Maximum hostiles + MANPADS (max 2) |
+
+**Key Differences:**
+- **SAR Focus:** Navigation and search difficulty - only Easy shows ambulance on map
+- **CSAR Focus:** Combat difficulty - ambulance ALWAYS on map (1000m radius), enemy strength scales
+- **Orange Smoke:** Available for SAR Easy and ALL CSAR difficulties (marks ambulance location)
 
 #### How to Complete
 1. 📍 Check **F10 map** for crash site location (precision depends on difficulty)
@@ -123,10 +142,12 @@ Experience extended gameplay with **3 consecutive random missions**:
 - Default: OFF
 
 #### Advanced: Tactical Support
-See [Advanced CSAR Features](#advanced-csar-features-troop-support) below for:
-- 🪖 **Troop Loading System** - Load spotters and snipers at airfields
+For CSAR missions with heavy resistance, see [Advanced CSAR Features](#advanced-csar-features-troop-support) below:
+- 🪖 **Troop Loading System** - Load spotters and snipers at airfields before mission
 - 🪢 **Fast-Rope Deployment** - Deploy troops via fast-rope into hostile zones
-- 💨 **Green Smoke Markers** - Request perimeter smoke for large search areas
+- 💨 **Green Smoke Markers** - Request perimeter smoke to visualize 1000m search boundary
+
+**Most useful for:** Medium, Hard, and Very Hard CSAR (when facing vehicles and MANPADS)
 
 ---
 
@@ -358,17 +379,20 @@ Load specialized troops to assist with hostile rescue operations:
 
 ### 💨 Green Smoke Perimeter Markers
 
-**Request smoke markers during CSAR missions with large search areas.**
+**Request smoke markers to mark search area boundaries.**
 
 #### When Available
-- CSAR missions with **search radius** (Medium, Hard, Very Hard difficulties)
-- Not available for Easy difficulty (exact location given)
+- **All CSAR missions** (all difficulties have 1000m search radius)
+- **All SAR missions** (Easy: 1000m, Medium: 1000m, Hard: 1000m, Very Hard: 1250m)
+- Menu option appears automatically when search radius exists
 
 #### How to Use
 1. **F10 → "Request smoke around perimeter"**
-2. **Green smoke grenades** deploy around search area perimeter
+2. **Green smoke grenades** deploy around search area perimeter (in circle pattern)
 3. **Police units** automatically cleared from area (if present)
 4. **Visual reference** - helps identify search boundary from air
+
+**Note:** Even when ambulance is marked on F10 map (SAR Easy, all CSAR), green smoke still helps visualize the search radius boundary from the air.
 
 #### Tactical Benefits
 - ✅ Clearly marks search area edges
