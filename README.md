@@ -5,6 +5,29 @@ This is a open helicopter sandbox mission inspired by the "I Love This Job" miss
 
 The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper.  The game has not been tested extensively with multiple players.
 
+## Version 0.4
+
+v0.4 changelog
+
+- SAR: Mission difficulty now based on clues to location of ambulance. Easy - smoke on ambulance. Medium - several fires, ambulance wthin 50m of one. Hard - Large auto wreck on roads, ambulance with 100m of wreck.  Very hard - no clues
+
+- CSAR:  Mission difficulty now based on hostile presence.  Ambulance always gets smoke.  Easy: Light infantry Medium: light infantry and vehicles, Hard: MANPADS and everything in medium Very Hard: More units, all types.
+
+- CSAR spotters and snipers:  You can now load two types of unit : spotters and snipers at any airbase, hospital landing pad or FARP.  Once loaded you can deploy them via new fastrope system.
+
+- Fastroping - drop off new unit types on rooftops or ground without landing.  This is a two phase system.  In the first phase, stabilize above your intended drop off between 10-90 feet above.   When phase 1 completes, the point you are above becomes the target for phase 2 .  In phase 2, hover above the target location for 5 seconds to deploy unit.
+
+- Spotters: When fastroped to ground or building, spotters will ID different infantry and vehicles on the F10 map and smoke their location.  Note that vehicles roam so this may not always reflect where they are.  Spotters spot units with 3km based on distance and elevation difference between the two - higher and closer = higher chance.  True LOS not checked here
+
+- Snipers: Snipers allow the user to take out one spotted infantry unit instantly.  A spotter must be present and actively spotted a unit to use.  The snipers candidate targets show up on the F10 menu with probabilities of hitting - closer and higher is better like in spotters.
+
+- (C)SAR: Instead of green smoke, police cars with flashing lights are present around the search radius of the rescue area.  F10 will allow you to smoke the perimeter if desired and remove the police vehicles (suggested if you use labels in game)
+
+- Chase: The default DCS install doesn't include any fast moving vehicles. For users without mod there is now a script in the root of Github repo to create a duplicate of the VAZ car with sports car speed. This is highly recommended for making this mission more interesting.
+
+- Many small fixes to overall mission
+
+
 
 ## 📦 Requirements
 
