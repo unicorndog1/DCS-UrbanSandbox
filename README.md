@@ -5,12 +5,6 @@ This is a open helicopter sandbox mission inspired by the "I Love This Job" miss
 
 The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper.  The game has not been tested extensively with multiple players.
 
-**Key Features:**
-- 🎲 **6 different mission types** with procedural generation
-- 🎯 **Multiple difficulty levels** for varied challenge
-- 🔄 **"Shift Mode"** - complete 3 consecutive missions for extended gameplay
-- 🗣️ **Voice-over support** (optional TTS integration)
-- 🌍 **Play anywhere** - works on any DCS map with proper zone setup
 
 ## 📦 Requirements
 
@@ -25,6 +19,8 @@ Both of these are optional but highly recommended.
 Chase missions work with stock vehicles but are easier to
 - The release folder includes a script (`create_vaz_juiced_mod.ps1`)to create a modded version of the DCS Vaz car that travels very quickly, run the script and the mission will load the modded vehicle.  This makes the chase mission significantly more challenging and fun.
 
+
+## NOTE: All of the documentation below is AI generated, better documentation to come
 ## 📋 Quick Start Guide
 
 1. **Load the mission** in DCS World
