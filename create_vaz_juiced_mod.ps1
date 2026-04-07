@@ -3,7 +3,7 @@ param(
     [string]$SavedGamesRoot,
     [string]$ModName = "VAZ_JUICED",
     [string]$UnitName = "VAZ JUICED",
-    [double]$MaxSpeedKph = 200.0,
+    [double]$MaxSpeedKph = 280.0,
     [switch]$Force
 )
 
@@ -80,8 +80,8 @@ Copy-Item -Path $sourceVazEdm -Destination (Join-Path $shapeRoot "vaz.edm") -For
 Copy-Item -Path $sourceVazLods -Destination (Join-Path $shapeRoot "vaz.lods") -Force
 
 $maxRoadVelocityMps = [Math]::Round($MaxSpeedKph / 3.6, 6)
-$maxAcceleration = [Math]::Round([Math]::Max($maxRoadVelocityMps / 8.0, 3.0), 6)
-$enginePower = [Math]::Round([Math]::Max($MaxSpeedKph * 0.9, 120.0), 3)
+$maxAcceleration = [Math]::Round([Math]::Max($maxRoadVelocityMps / 4.0, 8.0), 6)
+$enginePower = [Math]::Round([Math]::Max($MaxSpeedKph * 2.5, 400.0), 3)
 
 $entryLua = @"
 declare_plugin("$ModName", {
@@ -201,7 +201,7 @@ set_recursive_metatable(GT, GT_t.generic_wheel_vehicle)
 
 GT.chassis = {
     life = 1.5,
-    mass = 1250,
+    mass = 1100,
     length = 4.1,
     width = 1.62,
     max_road_velocity = $maxRoadVelocityMps,
