@@ -5,11 +5,27 @@ This is a open helicopter sandbox mission inspired by the "I Love This Job" miss
 
 The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper.  The game has not been tested extensively with multiple players.
 
-## Changelog
+## Version 0.4
 
-- [Version 0.4 (Archived)](#version-04)
+v0.4 changelog
 
-## Version 0.5
+- SAR: Mission difficulty now based on clues to location of ambulance. Easy - smoke on ambulance. Medium - several fires, ambulance wthin 50m of one. Hard - Large auto wreck on roads, ambulance with 100m of wreck.  Very hard - no clues
+
+- CSAR:  Mission difficulty now based on hostile presence.  Ambulance always gets smoke.  Easy: Light infantry Medium: light infantry and vehicles, Hard: MANPADS and everything in medium Very Hard: More units, all types.
+
+- CSAR spotters and snipers:  You can now load two types of unit : spotters and snipers at any airbase, hospital landing pad or FARP.  Once loaded you can deploy them via new fastrope system.
+
+- Fastroping - drop off new unit types on rooftops or ground without landing.  This is a two phase system.  In the first phase, stabilize above your intended drop off between 10-90 feet above.   When phase 1 completes, the point you are above becomes the target for phase 2 .  In phase 2, hover above the target location for 5 seconds to deploy unit.
+
+- Spotters: When fastroped to ground or building, spotters will ID different infantry and vehicles on the F10 map and smoke their location.  Note that vehicles roam so this may not always reflect where they are.  Spotters spot units with 3km based on distance and elevation difference between the two - higher and closer = higher chance.  True LOS not checked here
+
+- Snipers: Snipers allow the user to take out one spotted infantry unit instantly.  A spotter must be present and actively spotted a unit to use.  The snipers candidate targets show up on the F10 menu with probabilities of hitting - closer and higher is better like in spotters.
+
+- (C)SAR: Instead of green smoke, police cars with flashing lights are present around the search radius of the rescue area.  F10 will allow you to smoke the perimeter if desired and remove the police vehicles (suggested if you use labels in game)
+
+- Chase: The default DCS install doesn't include any fast moving vehicles. For users without mod there is now a script in the root of Github repo to create a duplicate of the VAZ car with sports car speed. This is highly recommended for making this mission more interesting.
+
+- Many small fixes to overall mission
 
 
 
@@ -27,7 +43,6 @@ Chase missions work with stock vehicles but are easier to
 - The release folder includes a script (`create_vaz_juiced_mod.ps1`)to create a modded version of the DCS Vaz car that travels very quickly, run the script and the mission will load the modded vehicle.  This makes the chase mission significantly more challenging and fun.
 
 
-## NOTE: All of the documentation below is AI generated, better documentation to come
 ## 📋 Quick Start Guide
 
 1. **Load the mission** in DCS World
@@ -52,6 +67,7 @@ Chase missions work with stock vehicles but are easier to
   - [Hospital Transfer](#8-hospital-transfer-mission)
   - [Container Rescue](#9-container-rescue-mission)
   - [Highway Rescue](#10-highway-rescue-mission)
+  - [Speed Trap](#11-speed-trap-mission)
 - [Advanced CSAR Features](#advanced-csar-features-troop-support)
 - [Additional Features](#additional-features)
 - [Mission Editor Guide](#mission-editor-guide-adding-new-townscities)
@@ -92,7 +108,7 @@ Use the **F10 Radio Menu** to select individual missions on demand:
 - 🏥 **Hospital Transfer** - Inter-hospital patient transport with diversion chance
 - 🚢 **Container Rescue** - Hoist container to free trapped worker
 - 🛣️ **Highway Rescue** - SAR/CSAR at highway accident with traffic jam (when highway cache available)
-- 🚔 **Speed Trap** - Monitor highway traffic and ticket speeders (when highway cache available)
+- 🚔 **Speed Trap** - Monitor highway traffic and ticket speeders (debug mode + highway cache)
 
 ### 🔄 Shift Mode ("Start Day")
 Experience extended gameplay with **3 consecutive random missions**:
@@ -105,18 +121,20 @@ Experience extended gameplay with **3 consecutive random missions**:
 
 **Features:**
 - ✅ Missions selected randomly from all types
-- ✅ Includes Highway Rescue and Speed Trap when highway cache is loaded
+- ✅ Includes Highway Rescue when highway cache is loaded
+- ✅ Includes Speed Trap only when enabled in `DayShiftConfig` and running in debug mode
 - ✅ Automatic queueing and progression
 - ✅ No menu interaction needed between jobs
 - ✅ Can cancel mid-shift: F10 → "Cancel Current Mission"
 
 **Mission Pool:**
-- CSAR/SAR missions (various difficulties)
-- VIP Mission
-- Chase Mission (Easy or Hard)
-- Vehicle Inspection
-- Highway Rescue (when highway cache available)
-- Speed Trap (when highway cache available)
+- The mission pool is controlled by `DayShiftConfig` in `missions/citysar2.lua`
+- Depending on configuration and map prerequisites, the pool can include:
+   - CSAR/SAR scenarios (including protest and naval variants)
+   - VIP, Chase, Vehicle Inspection
+   - Cargo Transport, Container Rescue, Hospital Transfer
+   - Highway Rescue (when highway cache is loaded)
+   - Speed Trap (debug mode + highway cache)
 
 ---
 
@@ -480,6 +498,11 @@ For CSAR missions with heavy resistance, see [Advanced CSAR Features](#advanced-
 - ⚠️ **Minimum 5km continuous highway segment** required
 - Only appears in mission menu when cache available
 
+**Highway Cache Setup:**
+- Generate/update highway cache via harness suite:
+   - `./scripts/testing/run_dcs_e2e_harness.ps1 -MissionPath ./mission_files/leb.miz -TestSuites "highway_gen"`
+- Cache file should exist at `tools/highway_cache/highway_cache.lua`
+
 **Availability:**
 - 🎲 Included in "Start Day" random rotation when highway cache loaded
 - 🎯 Can be selected manually from F10 menu (when available)
@@ -528,6 +551,7 @@ For CSAR missions with heavy resistance, see [Advanced CSAR Features](#advanced-
 - ❌ Poor: <50% speeders ticketed
 
 **Requirements:**
+- ⚠️ **Debug mode only** (`_debug = true`)
 - ⚠️ **Highway cache must be loaded** (HighwayPointCache)
 - ⚠️ **Minimum 2km highway segment** required
 - Only appears in mission menu when cache available
@@ -957,30 +981,4 @@ Cargo Zones:
 **Version:** See [release notes](./release/) for version history and changelog.
 
 **Have fun and fly safe! 🚁**
-
----
-
-## Old Changelogs
-
-### Version 0.4
-
-v0.4 changelog
-
-- SAR: Mission difficulty now based on clues to location of ambulance. Easy - smoke on ambulance. Medium - several fires, ambulance wthin 50m of one. Hard - Large auto wreck on roads, ambulance with 100m of wreck.  Very hard - no clues
-
-- CSAR:  Mission difficulty now based on hostile presence.  Ambulance always gets smoke.  Easy: Light infantry Medium: light infantry and vehicles, Hard: MANPADS and everything in medium Very Hard: More units, all types.
-
-- CSAR spotters and snipers:  You can now load two types of unit : spotters and snipers at any airbase, hospital landing pad or FARP.  Once loaded you can deploy them via new fastrope system.
-
-- Fastroping - drop off new unit types on rooftops or ground without landing.  This is a two phase system.  In the first phase, stabilize above your intended drop off between 10-90 feet above.   When phase 1 completes, the point you are above becomes the target for phase 2 .  In phase 2, hover above the target location for 5 seconds to deploy unit.
-
-- Spotters: When fastroped to ground or building, spotters will ID different infantry and vehicles on the F10 map and smoke their location.  Note that vehicles roam so this may not always reflect where they are.  Spotters spot units with 3km based on distance and elevation difference between the two - higher and closer = higher chance.  True LOS not checked here
-
-- Snipers: Snipers allow the user to take out one spotted infantry unit instantly.  A spotter must be present and actively spotted a unit to use.  The snipers candidate targets show up on the F10 menu with probabilities of hitting - closer and higher is better like in spotters.
-
-- (C)SAR: Instead of green smoke, police cars with flashing lights are present around the search radius of the rescue area.  F10 will allow you to smoke the perimeter if desired and remove the police vehicles (suggested if you use labels in game)
-
-- Chase: The default DCS install doesn't include any fast moving vehicles. For users without mod there is now a script in the root of Github repo to create a duplicate of the VAZ car with sports car speed. This is highly recommended for making this mission more interesting.
-
-- Many small fixes to overall mission
 
