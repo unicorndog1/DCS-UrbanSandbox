@@ -7,9 +7,28 @@ The mission is designed around the Huey, but starting the game in multiplayer mo
 
 ## Changelog
 
+## Version 0.5
+
+- New map: Cold War Germany/Berlin
+
+- Reorganized SAR missions to list difficulty in finding the target and landing
+
+- Added new highway and water rescue missions
+
+- Added new cargo container accident mission and simple cargo missions to Syria only
+
+- Added per-mission assistances to smoke, mark various objectives to allow user to tune
+   difficulty to their preference
+
+- Added briefing for in-game reference.
+
+- Added spawns for various loadout types for quick switching
+
+- Many small bug fixes
+
 - [Version 0.4 (Archived)](#version-04)
 
-## Version 0.5
+
 
 
 
