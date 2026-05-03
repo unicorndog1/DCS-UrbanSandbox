@@ -5,6 +5,11 @@ This is a open helicopter sandbox mission inspired by the "I Love This Job" miss
 
 The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper.  The game has not been tested extensively with multiple players.
 
+# Comments/Bug Reports/Suggestions/Etc
+
+[DCS Forums] (https://forum.dcs.world/topic/386709-urban-helo-sandbox/#comment-5770728)
+[Discord] (https://discord.gg/4wed7K37q)
+
 ## Changelog
 
 ## Version 0.5
