@@ -7,8 +7,8 @@ The mission is designed around the Huey, but starting the game in multiplayer mo
 
 # Comments/Bug Reports/Suggestions/Etc
 
-[DCS Forums] (https://forum.dcs.world/topic/386709-urban-helo-sandbox/#comment-5770728)
-[Discord] (https://discord.gg/4wed7K37q)
+[DCS Forums](https://forum.dcs.world/topic/386709-urban-helo-sandbox/#comment-5770728)
+[Discord](https://discord.gg/4wed7K37q)
 
 ## Changelog
 
