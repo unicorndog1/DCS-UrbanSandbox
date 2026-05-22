@@ -3,46 +3,29 @@
 
 This is a open helicopter sandbox mission inspired by the "I Love This Job" mission pack! Experience diverse helicopter operations in an urban environment with voiceovers, combat scenarios, and randomly generated missions. Designed for quick gameplay sessions and short travel distance
 
-**Now with Full Multiplayer Support!** Play solo or with friends - all missions support concurrent multiplayer gameplay with complete player isolation.
+The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper.  The game has not been tested extensively with multiple players.
 
-The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper. The mission supports multiple concurrent players with independent missions and state.
+# Comments/Bug Reports/Suggestions/Etc
 
-## 🌐 Multiplayer Support
+[DCS Forums](https://forum.dcs.world/topic/386709-urban-helo-sandbox/#comment-5770728)
+[Discord](https://discord.gg/4wed7K37q)
 
-**Full multiplayer compatibility** - All mission types support concurrent players:
-- ✅ Independent mission queues per player
-- ✅ Private communication (no cross-player message leaks)
-- ✅ Concurrent rooftop, CSAR, cargo, and all other missions
-- ✅ Per-player F10 menus and state tracking
-
-**Available Mission Files:**
-- `urbanhelosandbox_syria.miz` - Lebanon (Single-player optimized)
-- `urbanhelosandbox_syria_mp.miz` - Lebanon (Multiplayer)
-- `urbanhelosandbox_germany.miz` - Germany (Single-player optimized)
-- `urbanhelosandbox_germany_mp.miz` - Germany (Multiplayer)
-
-**Server Deployment:** Use the `_mp.miz` files for dedicated servers. All missions work identically in single-player and multiplayer modes.
 
 ## Changelog
 
-## Version 0.5
+## Version 0.7
 
-- New map: Cold War Germany/Berlin
+- New mission type - power pole inspection
 
-- Reorganized SAR missions to list difficulty in finding the target and landing
+- Many bug fixes and small QoL improvements
 
-- Added new highway and water rescue missions
+- All smoke markers (including assitances) should deploy 25m from the unit.  This prevents smoke from blocking the landing pad/ambulance
 
-- Added new cargo container accident mission and simple cargo missions to Syria only
+- Day shift mission now focuses exclusively on civil (non-combat missions)
 
-- Added per-mission assistances to smoke, mark various objectives to allow user to tune
-   difficulty to their preference
 
-- Added briefing for in-game reference.
+-  [Version 0.5 (Archived)](#version-05)
 
-- Added spawns for various loadout types for quick switching
-
-- Many small bug fixes
 
 - [Version 0.4 (Archived)](#version-04)
 
@@ -62,6 +45,7 @@ Both of these are optional but highly recommended.
 
 Chase missions work with stock vehicles but are easier to
 - The release folder includes a script (`create_vaz_juiced_mod.ps1`)to create a modded version of the DCS Vaz car that travels very quickly, run the script and the mission will load the modded vehicle.  This makes the chase mission significantly more challenging and fun.
+
 
 
 ## NOTE: All of the documentation below is AI generated, better documentation to come
@@ -998,6 +982,26 @@ Cargo Zones:
 ---
 
 ## Old Changelogs
+
+###  Version 0.5
+
+
+- New map: Cold War Germany/Berlin
+
+- Reorganized SAR missions to list difficulty in finding the target and landing
+
+- Added new highway and water rescue missions
+
+- Added new cargo container accident mission and simple cargo missions to Syria only
+
+- Added per-mission assistances to smoke, mark various objectives to allow user to tune
+   difficulty to their preference
+
+- Added briefing for in-game reference.
+
+- Added spawns for various loadout types for quick switching
+
+- Many small bug fixes
 
 ### Version 0.4
 
