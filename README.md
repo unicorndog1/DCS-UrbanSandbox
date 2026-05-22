@@ -3,12 +3,25 @@
 
 This is a open helicopter sandbox mission inspired by the "I Love This Job" mission pack! Experience diverse helicopter operations in an urban environment with voiceovers, combat scenarios, and randomly generated missions. Designed for quick gameplay sessions and short travel distance
 
-The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper.  The game has not been tested extensively with multiple players.
+**Now with Full Multiplayer Support!** Play solo or with friends - all missions support concurrent multiplayer gameplay with complete player isolation.
 
-# Comments/Bug Reports/Suggestions/Etc
+The mission is designed around the Huey, but starting the game in multiplayer mode will allow you to use a dynamic spawn to use any chopper. The mission supports multiple concurrent players with independent missions and state.
 
-[DCS Forums](https://forum.dcs.world/topic/386709-urban-helo-sandbox/#comment-5770728)
-[Discord](https://discord.gg/4wed7K37q)
+## 🌐 Multiplayer Support
+
+**Full multiplayer compatibility** - All mission types support concurrent players:
+- ✅ Independent mission queues per player
+- ✅ Private communication (no cross-player message leaks)
+- ✅ Concurrent rooftop, CSAR, cargo, and all other missions
+- ✅ Per-player F10 menus and state tracking
+
+**Available Mission Files:**
+- `urbanhelosandbox_syria.miz` - Lebanon (Single-player optimized)
+- `urbanhelosandbox_syria_mp.miz` - Lebanon (Multiplayer)
+- `urbanhelosandbox_germany.miz` - Germany (Single-player optimized)
+- `urbanhelosandbox_germany_mp.miz` - Germany (Multiplayer)
+
+**Server Deployment:** Use the `_mp.miz` files for dedicated servers. All missions work identically in single-player and multiplayer modes.
 
 ## Changelog
 
